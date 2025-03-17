@@ -5,7 +5,6 @@ const bcrypt = require("bcrypt");
 
 
 router.post("/", async (req, res) => {
-  console.log("hello");
   try {
     console.log("Request Body:", req.body); // Debugging
 
