@@ -13,6 +13,8 @@ const userSchema = new mongoose.Schema({
   address: { type: String, required: true },
   role: { type: String, required: true, default: "user" }, // Default role
   picture: { type: String, required: false }, // Optional field
+  otp: { type: String }, // Store OTP
+  otpExpires: { type: Date }, // Store OTP expiration time
 });
 
 userSchema.methods.generateAuthToken = function () {
