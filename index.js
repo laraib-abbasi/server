@@ -5,7 +5,14 @@ const cors = require('cors');
 const connection= require('./db');
 const userRoutes=require('./routes/users');
 const authRoutes=require('./routes/auth');
+const https = require('https');
 
+
+https.get('https://www.google.com', (res) => {
+  console.log(`Status Code: ${res.statusCode}`);
+}).on('error', (err) => {
+  console.error('Error:', err);
+});
 
 //database connection
 connection();
