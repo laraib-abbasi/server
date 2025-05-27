@@ -2,21 +2,31 @@ const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const Joi = require("joi");
 const passwordComplexity = require("joi-password-complexity");
-
 const userSchema = new mongoose.Schema({
   firstName: { type: String, required: true },
   lastName: { type: String, required: true },
-  email: { type: String, required: true },
+  email: { type: String, required: true},
   password: { type: String, required: true },
   username: { type: String, required: true },
   mobileNo: { type: String, required: true }, // Changed to String
   address: { type: String, required: true },
   role: { type: String, required: true, default: "user" }, // Default role
   picture: { type: String, required: false }, // Optional field
+  isVerified: {
+    type: Boolean,
+    default: false, // Defaults to false (unverified)
+  },
   otp: { type: String }, // Store OTP
   otpExpires: { type: Date }, // Store OTP expiration time
 });
-
+// Add a partial index to enforce uniqueness ONLY for verified users
+userSchema.index(
+  { email: 1 },
+  {
+    unique: true,
+    partialFilterExpression: { isVerified: true }
+  }
+);
 userSchema.methods.generateAuthToken = function () {
   const token = jwt.sign(
     { _id: this._id, role: this.role },
@@ -25,9 +35,7 @@ userSchema.methods.generateAuthToken = function () {
   );
   return token;
 };
-
 const User = mongoose.model("User", userSchema);
-
 const validate = (data) => {
   const schema = Joi.object({
     firstName: Joi.string().min(2).max(50).required().label("First Name"),
@@ -40,6 +48,4 @@ const validate = (data) => {
   });
   return schema.validate(data);
 };
-
 module.exports = { User, validate };
-
