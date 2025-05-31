@@ -16,7 +16,9 @@ https.get('https://www.google.com', (res) => {
 connection();
 // Middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: ['http://localhost:3000', 'https://lithub-frontend.vercel.app']
+}));
 // Global error handler
 app.use((err, req, res, next) => {
     console.error("Global Error Handler:", err); // Log the full error
