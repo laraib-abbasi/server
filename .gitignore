@@ -1,2 +1,226 @@
+# ============================================
+# DEPENDENCIES
+# ============================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# ============================================
+# ENVIRONMENT VARIABLES
+# ============================================
 .env
-.env
+.env.local
+.env.production
+.env.development
+.env.test
+.env.staging
+.env.*.local
+*.env
+*.env.local
+
+# ============================================
+# RUNTIME / COMPILED FILES
+# ============================================
+dist/
+build/
+out/
+.next/
+.nuxt/
+.cache/
+*.tsbuildinfo
+
+# ============================================
+# LOGS
+# ============================================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+lerna-debug.log*
+.pm2/
+logs/
+*.pid
+*.seed
+*.pid.lock
+
+# ============================================
+# DATABASES
+# ============================================
+*.db
+*.sqlite
+*.sqlite3
+*.sqlite-journal
+*.mongodb
+*.mongo
+dump/
+mongodb-data/
+
+# ============================================
+# OS FILES (Mac)
+# ============================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+*.tmp
+
+# ============================================
+# IDE / EDITOR FILES
+# ============================================
+.vscode/
+.idea/
+*.iml
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ============================================
+# TESTING
+# ============================================
+coverage/
+.nyc_output/
+*.test.js
+*.spec.js
+*.test.ts
+*.spec.ts
+
+# ============================================
+# SECURITY / AUTH FILES
+# ============================================
+*.pem
+*.key
+*.crt
+*.csr
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.truststore
+*.p8
+*.pub
+*.priv
+*.secret
+secrets/
+private/
+credentials/
+*.credentials
+*.cert
+*.pem
+id_rsa*
+id_dsa*
+
+# ============================================
+# TEMPORARY FILES
+# ============================================
+*.tmp
+*.temp
+tmp/
+temp/
+*.cache
+*.bak
+*.swp
+*.swo
+*~
+
+# ============================================
+# UPLOAD FILES
+# ============================================
+uploads/
+uploads/*
+!uploads/.gitkeep
+public/uploads/
+public/uploads/*
+!public/uploads/.gitkeep
+
+# ============================================
+# SESSION FILES
+# ============================================
+sessions/
+session/
+*.session
+*.session.json
+
+# ============================================
+# CONFIG FILES (with sensitive data)
+# ============================================
+config/local.js
+config/development.js
+config/production.js
+config/staging.js
+config/credentials.js
+config/secrets.js
+*.config.local.json
+*.config.dev.json
+
+# ============================================
+# DOCKER
+# ============================================
+.docker/
+docker-compose.override.yml
+Dockerfile.local
+*.dockerignore
+
+# ============================================
+# DEPLOYMENT
+# ============================================
+deploy/
+deployment/
+.capistrano/
+.capfile
+.elasticbeanstalk/
+.ebextensions/
+.serverless/
+.vercel/
+*.pem
+
+# ============================================
+# MISC
+# ============================================
+*.tgz
+*.zip
+*.rar
+*.7z
+*.gz
+.DS_Store
+.env.local
+.env.*.local
+npm-debug.log*
+yarn-debug.log*
+lerna-debug.log*
+.pnpm-debug.log*
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.vercel
+.netlify
+*.pid
+*.seed
+*.pid.lock
+.eslintcache
+.parcel-cache
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
