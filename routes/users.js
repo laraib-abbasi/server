@@ -50,10 +50,6 @@ router.post("/", async (req, res) => {
     // Proceed with signup (hash password, generate OTP, etc.)
     const salt = await bcrypt.genSalt(Number(process.env.SALT));
     const hashPassword = await bcrypt.hash(req.body.password, salt);
-  
-    //OTP for email verification 
-    const otp = otpGenerator.generate(6, { digits: true, alphabets: false, upperCase: false, specialChars: false });
-    const otpExpires = new Date(Date.now() + 10 * 60 * 1000); // OTP expires in 10 minutes
 
     // Determine if this is an admin-created user (skip OTP)
     const isAdminCreation = req.body.isVerified === true;
