@@ -1,28 +1,3 @@
-// Function to send OTP email
-// const sgMail = require('@sendgrid/mail');
-// sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-// const sendOTPEmail = async (email, otp) => {
-//   try {
-//     // Create the email object
-//     const msg = {
-//       to: email, // Recipient's email address
-//       from: 'iam.skipperod@gmail.com', // Verified sender email in SendGrid
-//       subject: 'Your OTP for Registration', // Email subject
-//       text: `Your OTP is: ${otp}`, // Plain text body
-//       html: `<strong>Your OTP is: ${otp}</strong>`, // HTML body
-//     };
-//     // Send the email
-//     await sgMail.send(msg);
-//     console.log(`OTP sent to ${email}`);
-//   } catch (error) {
-//     console.error('Error sending OTP email:', error);
-//     throw error; // Propagate the error to the caller
-//   }
-// };
-// // Export the sendOTPEmail function
-// module.exports = { sendOTPEmail };
-
-
 const nodemailer = require('nodemailer');
 require('dotenv').config();
 
